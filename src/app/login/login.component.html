@@ -1,14 +1,14 @@
-<div class="row" style="margin-top: 200px;">
+<div class="row" style="margin-top: 150px;">
     <div class="col">
 
     </div>
     <div class="col">
-        <h1 style="text-align: center;">AUTHENTIFICATION</h1>
+        <img src="assets/logo.png" style="margin-left: 40px;"><br>
         <label>Username</label>
         <input type="text" class="form-control" id="recipient-name" #username>
         <label>Password</label>
         <input type="password" class="form-control" id="recipient-name" #password>
-        <button type="button" class="btn btn-primary" style="margin-top: 20px;" (click)="auth.login(username.value,password.value)"> Connexion</button>
+        <button type="button" class="btn btn-secondary" style="margin-top: 20px;" (click)="auth.login(username.value,password.value)"> Connexion</button>
 
     </div>
     <div class="col">

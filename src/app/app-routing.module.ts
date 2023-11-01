@@ -12,9 +12,9 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component:LoginComponent, },
   { path: 'dashboard', component:DashboardComponent, canActivate:[GuardGuard]},
-  { path: 'gs-users', component:GsUsersComponent, canActivate:[GuardGuard]},
-  { path: 'gs-individus', component:GsIndividusComponent, canActivate:[GuardGuard]},
-  { path: 'gs-casiers', component:GsCasiersComponent, canActivate:[GuardGuard]},
+  { path: 'gs-services', component:GsUsersComponent, canActivate:[GuardGuard]},
+  { path: 'gs-personnels', component:GsIndividusComponent, canActivate:[GuardGuard]},
+  { path: 'gs-affectations', component:GsCasiersComponent, canActivate:[GuardGuard]},
   { path: 'impression', component:ImpressionComponent, canActivate:[GuardGuard]},
 ];
 

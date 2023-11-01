@@ -15,9 +15,9 @@ export class AuthService {
 
 
     login(username:any, password:any){
-      if(username=='Francis' && password=='000000'){
+      if(username=='Eben' && password=='000000'){
         localStorage.setItem('token','true');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/gs-personnels']);
         
       }else{
         alert('Erreur de connexion');

@@ -23,17 +23,14 @@ export class GsUsersComponent implements OnInit {
     public router: Router) {
       this.usersForm = this.formBuilder.group({
         id:null,
-        username: ['', [Validators.required], ],
-        password: ['', [Validators.required],],
-        role: ['', Validators.required],
-        status: "Active",
+        departement: ['', [Validators.required], ],
+        service: ['', [Validators.required],],
+        
       });
 
       this.updateusersForm = this.formBuilder.group({
-        username: ['', [Validators.required], ],
-        password: ['', [Validators.required],],
-        role: ['', Validators.required],
-        status: "Active",
+        departement: ['', [Validators.required], ],
+        service: ['', [Validators.required],],
       });
      }
 
@@ -68,10 +65,9 @@ export class GsUsersComponent implements OnInit {
       this.idUser = this.usersGet.id;
 
       this.updateusersForm = this.formBuilder.group({
-        username: this.usersGet.username,
-        password: this.usersGet.password,
-        role: this.usersGet.role,
-        status: this.usersGet.status
+        departement: this.usersGet.departement,
+        service: this.usersGet.service,
+    
       });
       
     });
