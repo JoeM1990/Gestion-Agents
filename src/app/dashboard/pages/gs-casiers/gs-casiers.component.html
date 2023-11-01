@@ -16,9 +16,8 @@
                           <tr>
                             <th> # </th>
                             <th> Noms complet </th>
-                            <th> Motif </th>
-                            <th> Officier </th>
-                            <th> Date </th>
+                            <th> Departement </th>
+                            <th> Date Affectation</th>
                             <th> Actions </th>
                           </tr>
                         </thead>
@@ -26,8 +25,7 @@
                           <tr *ngFor="let casiers of casiers">
                             <td scop="row"> {{casiers.id}} </td>
                             <td> {{casiers.noms}} </td>
-                            <td> {{casiers.motif}} </td>
-                            <td> {{casiers.officier}} </td>
+                            <td> {{casiers.departement}} </td>
                             <td> {{casiers.date}} </td>
                             <td> 
                               <!-- <i class="fas fa-eye fa-lg text-success mr-2" ></i> -->
@@ -71,12 +69,10 @@
                 </select>
               </div>
               <div class="col-auto">
-                <label class="col-form-label">Motif</label>
-                <input type="text" class="form-control"  formControlName="motif">
-              </div>
-              <div class="col-auto">
-                <label class="col-form-label">Officier</label>
-                <input type="text" class="form-control"  formControlName="officier">
+                <label class="col-form-label">Departement</label>
+                <select  class="form-control"  formControlName="departement">
+                  <option *ngFor="let data of dep">{{data.departement}} </option>
+                </select>
               </div>
               <div class="col-auto">
                 <label  class="col-form-label">Date</label>
@@ -118,13 +114,12 @@
                 </select>
               </div>
               <div class="col-auto">
-                <label class="col-form-label">Motif</label>
-                <input type="text" class="form-control"  formControlName="motif">
+                <label class="col-form-label">Deparetement</label>
+                <select  class="form-control"  formControlName="departement">
+                  <option *ngFor="let data of dep">{{data.departement}} </option>
+                </select>
               </div>
-              <div class="col-auto">
-                <label class="col-form-label">Officier</label>
-                <input type="text" class="form-control"  formControlName="officier">
-              </div>
+             
               <div class="col-auto">
                 <label  class="col-form-label">Date</label>
                 <input type="date" class="form-control"  formControlName="date">

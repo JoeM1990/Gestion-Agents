@@ -13,6 +13,7 @@ export class GsCasiersComponent implements OnInit {
 
   casiers:any;
   casiersGet:any;
+  dep:any;
   individus:Individus[]=[];
 
   public casiersForm: FormGroup;
@@ -26,15 +27,13 @@ export class GsCasiersComponent implements OnInit {
       this.casiersForm = this.formBuilder.group({
         id:null,
         noms: ['', [Validators.required], ],
-        motif: ['', [Validators.required], ],
-        officier: ['', [Validators.required], ],
+        departement: ['', [Validators.required], ],
         date: ['', [Validators.required], ],
       });
   
       this.updatecasiersForm = this.formBuilder.group({
         noms: ['', [Validators.required], ],
-        motif: ['', [Validators.required], ],
-        officier: ['', [Validators.required], ],
+        departement: ['', [Validators.required], ],
         date: ['', [Validators.required], ],
       });
      }
@@ -51,6 +50,11 @@ export class GsCasiersComponent implements OnInit {
 
     this.service.getAllIndividus().subscribe((dataT)=>{
       this.individus = dataT;
+    }
+    );
+
+    this.service.getAllUsers().subscribe((dataT)=>{
+      this.dep = dataT;
     }
     );
 
@@ -78,8 +82,7 @@ export class GsCasiersComponent implements OnInit {
 
       this.updatecasiersForm= this.formBuilder.group({
         noms: this.casiersGet.noms,
-        motif: this.casiersGet.motif,
-        officier: this.casiersGet.officier,
+        departement: this.casiersGet.departement,
         date: this.casiersGet.date,
       });
 

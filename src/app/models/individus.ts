@@ -10,6 +10,5 @@ export class Individus {
     nation:string|undefined;
     adresse:string|undefined;
     telephone:string|undefined;
-    photo:string|undefined;
 }
 
