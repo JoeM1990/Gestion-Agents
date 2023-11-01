@@ -2,39 +2,34 @@
     <app-header></app-header>
     <main>
         <app-side-nav></app-side-nav>
+        
         <div class="display-area p-3">
             <div class="row justify-content-md-center">
                 <div class="col">
-                    <label>Noms Complet</label>
-                    <input type="text" class="form-control" id="recipient-name" [(ngModel)]="text">
-                    <button type="button" class="btn btn-primary" style="margin-top: 20px;" (click)="loadData()"> Rechercher</button>
 
+                  <button class="btn btn-danger" style="margin-top: 20px;" printSectionId="listePrint" ngxPrint> Imprimer</button>
+                  
                     <ng-container *ngIf="state">
                         <div class="col grid-margin stretch-card" style="margin-top: 10px;">
-                            <div class="card">
+                            <div class="card" id="listePrint">
                               <div class="card-body">
-                                <div class="table-responsive">
+                                <div class="table-responsive" >
                                   <table class="table">
                                     <thead>
                                       <tr>
                                         <th> # </th>
                                         <th> Noms complet </th>
-                                        <th> Motif </th>
-                                        <th> Officier </th>
+                                        <th> Departement </th>
                                         <th> Date </th>
-                                        <th> Actions </th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       <tr *ngFor="let casiers of casiers">
-                                        <td scop="row"> {{casiers.id}} </td>
-                                        <td> {{casiers.noms}} </td>
-                                        <td> {{casiers.motif}} </td>
-                                        <td> {{casiers.officier}} </td>
-                                        <td> {{casiers.date}} </td>
-                                        <td> 
-                                            <i class="fas fa-eye fa-lg text-success mr-2" ></i>
-                                            </td>
+                                        <td scop="row" *ngIf="casiers.status=='Approuvee' "> {{casiers.id}} </td>
+                                        <td *ngIf="casiers.status=='Approuvee' "> {{casiers.noms}} </td>
+                                        <td *ngIf="casiers.status=='Approuvee' "> {{casiers.departement}} </td>
+                                        <td *ngIf="casiers.status=='Approuvee' "> {{casiers.date}} </td>
+                                        
                                       </tr>
                                       
                                       
@@ -45,10 +40,6 @@
                             </div>
                           </div>
                     </ng-container>
-                </div>
-                <div class="col">
-                    <img src="assets/permis.jpg" width="600px">
-                    <button type="button" class="btn btn-danger" style="margin-top: 20px; margin-left: 260px;"> Imprimer</button>
                 </div>
 
             </div>

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'gs-services', component:GsUsersComponent, canActivate:[GuardGuard]},
   { path: 'gs-personnels', component:GsIndividusComponent, canActivate:[GuardGuard]},
   { path: 'gs-affectations', component:GsCasiersComponent, canActivate:[GuardGuard]},
-  { path: 'impression', component:ImpressionComponent, canActivate:[GuardGuard]},
+  { path: 'liste', component:ImpressionComponent, canActivate:[GuardGuard]},
 ];
 
 @NgModule({

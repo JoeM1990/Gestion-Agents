@@ -29,12 +29,14 @@ export class GsCasiersComponent implements OnInit {
         noms: ['', [Validators.required], ],
         departement: ['', [Validators.required], ],
         date: ['', [Validators.required], ],
+        status: 'en attente',
       });
   
       this.updatecasiersForm = this.formBuilder.group({
         noms: ['', [Validators.required], ],
         departement: ['', [Validators.required], ],
         date: ['', [Validators.required], ],
+        status: ['', [Validators.required], ],
       });
      }
 
@@ -84,6 +86,7 @@ export class GsCasiersComponent implements OnInit {
         noms: this.casiersGet.noms,
         departement: this.casiersGet.departement,
         date: this.casiersGet.date,
+        status: this.casiersGet.status,
       });
 
       

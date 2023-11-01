@@ -47,22 +47,25 @@
   ],
   "casiers": [
     {
-      "noms": "Monkila nkiwa joe",
-      "departement": "Informatique",
-      "date": "2023-10-05",
-      "id": 1
-    },
-    {
       "noms": "Monkila Nkiwa Joe",
       "departement": "Informatique",
       "date": "2023-11-01",
+      "status": "Approuvee",
       "id": 3
     },
     {
-      "id": 4,
       "noms": "B b b",
       "departement": "Nettoyage",
-      "date": "2023-11-01"
+      "date": "2023-11-01",
+      "status": "en attente",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "noms": "B b b",
+      "departement": "Nettoyage",
+      "date": "2023-11-01",
+      "status": "en attente"
     }
   ]
 }

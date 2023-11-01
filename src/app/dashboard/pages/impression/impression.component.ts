@@ -9,7 +9,7 @@ import { GServeService } from 'src/app/services/crud/g-serve.service';
 export class ImpressionComponent implements OnInit {
 
   casiers:any;
-  state=false;
+  state=true;
   text:any;
 
   constructor(private service:GServeService){}
@@ -21,13 +21,8 @@ export class ImpressionComponent implements OnInit {
 
   loadData(){
 
-    this.service.chercheCasier(this.text).subscribe((data)=>{
+    this.service.getAllCasiers().subscribe((data)=>{
       this.casiers = data  ;
-
-      if(data){
-        this.state=true;
-      }
-
     }
     );
    
