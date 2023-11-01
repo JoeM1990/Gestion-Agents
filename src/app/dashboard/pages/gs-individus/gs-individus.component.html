@@ -1,0 +1,224 @@
+<div class="container-fluid g-0">
+    <app-header></app-header>
+    <main>
+        <app-side-nav></app-side-nav>
+        <div class="display-area p-3">
+            <button type="button" class="btn btn-primary" style=" margin-bottom: 10px; " data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">+</button>
+          
+          
+            <div class="row">
+              <div class="col grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th> # </th>
+                            <th> Nom </th>
+                            <th> Postnom </th>
+                            <th> Prenom </th>
+                            <th> Sexe </th>
+                            <th> Lieu de naissance </th>
+                            <th> Date de naissance </th>
+                            <th> Etat civil </th>
+                            <th> Nationalite </th>
+                            <th> Adresse </th>
+                            <th> Telephone </th>
+                            <th> Photo </th>
+                            <th> Actions </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let individus of individus">
+                            <td scope="row"> {{individus.id}} </td>
+                            <td> {{individus.nom}} </td>
+                            <td> {{individus.postnom}} </td>
+                            <td> {{individus.prenom}} </td>
+                            <td> {{individus.sexe}} </td>
+                            <td> {{individus.lieu}} </td>
+                            <td> {{individus.date}} </td>
+                            <td> {{individus.etat}} </td>
+                            <td> {{individus.nation}} </td>
+                            <td> {{individus.adresse}} </td>
+                            <td> {{individus.telephone}} </td>
+                            <td> 
+                              <img src="{{'data:image/jpg;base64,' + individus.photo}}" width="50px">
+                           </td>
+                            <td> 
+                              <!-- <i class="fas fa-eye fa-lg text-success mr-2" ></i> -->
+                              <i class="fas fa-edit fa-lg text-info mr-2" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="getId(individus.id)"></i>
+                              <i class="fas fa-trash-alt fa-lg text-danger" (click)="deleteData(individus.id)"></i>
+                              </td>
+                            
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+              
+        </div>
+    </main>
+
+    
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Nouvelle Information</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="individusForm">
+            <div class="row g-3">
+              <div class="col-auto">
+                <label  class="col-form-label">Nom</label>
+                <input type="text" class="form-control"  formControlName="nom">
+              </div>
+              <div class="col-auto">
+                <label class="col-form-label">Postnom</label>
+                <input type="text" class="form-control"  formControlName="postnom">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Prenom</label>
+                <input type="text" class="form-control" formControlName="prenom">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Sexe</label>
+                <select class="form-control" formControlName="sexe">
+                    <option>M</option>
+                    <option>F</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Lieu de naissance</label>
+                <input type="text" class="form-control"  formControlName="lieu">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Date de naissance</label>
+                <input type="date" class="form-control"  formControlName="date">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Etat civil</label>
+                <select class="form-control" formControlName="etat">
+                    <option>Marié(e)</option>
+                    <option>Celibataire</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <label class="col-form-label">Nationalite</label>
+                <input type="text" class="form-control"  formControlName="nation">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Adresse</label>
+                <input type="text" class="form-control" formControlName="adresse">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Telephone</label>
+                <input type="text" class="form-control" formControlName="telephone">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Photo</label>
+                <input type="file" class="form-control" formControlName="photo" accept=".png, .jpg, .jpeg" (change)="onFileSelected($event)">
+              </div>
+              
+              
+            </div>
+            
+            <div class="modal-footer">
+              <!-- data-bs-dismiss="modal" -->
+              <button type="reset" class="btn btn-secondary">Reset</button>
+              <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" (click)="addData()">Ajouter</button>
+            </div>
+            
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Nouvelle Information</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="updateindividusForm">
+            <div class="row g-3">
+              <div class="col-auto">
+                <label  class="col-form-label">Nom</label>
+                <input type="text" class="form-control"  formControlName="nom">
+              </div>
+              <div class="col-auto">
+                <label class="col-form-label">Postnom</label>
+                <input type="text" class="form-control"  formControlName="postnom">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Prenom</label>
+                <input type="text" class="form-control" formControlName="prenom">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Sexe</label>
+                <select class="form-control" formControlName="sexe">
+                    <option>M</option>
+                    <option>F</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Lieu de naissance</label>
+                <input type="text" class="form-control"  formControlName="lieu">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Date de naissance</label>
+                <input type="date" class="form-control"  formControlName="date">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Etat civil</label>
+                <select class="form-control" formControlName="etat">
+                    <option>Marié(e)</option>
+                    <option>Celibataire</option>
+                </select>
+              </div>
+              <div class="col-auto">
+                <label class="col-form-label">Nationalite</label>
+                <input type="text" class="form-control"  formControlName="nation">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Adresse</label>
+                <input type="text" class="form-control" formControlName="adresse">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Telephone</label>
+                <input type="text" class="form-control" formControlName="telephone">
+              </div>
+              <div class="col-auto">
+                <label  class="col-form-label">Photo</label>
+                <input type="file" class="form-control" formControlName="photo" accept=".png, .jpg, .jpeg" (change)="onFileSelected($event)">
+              </div>
+              
+              
+            </div>
+            
+            <div class="modal-footer">
+              <!-- data-bs-dismiss="modal" -->
+              <button type="reset" class="btn btn-secondary">Reset</button>
+              <button type="submit" class="btn btn-primary"  data-bs-dismiss="modal" (click)="updateData()">Modifier</button>
+            </div>
+            
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

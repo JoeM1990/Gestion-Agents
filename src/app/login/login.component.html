@@ -1,0 +1,17 @@
+<div class="row" style="margin-top: 200px;">
+    <div class="col">
+
+    </div>
+    <div class="col">
+        <h1 style="text-align: center;">AUTHENTIFICATION</h1>
+        <label>Username</label>
+        <input type="text" class="form-control" id="recipient-name" #username>
+        <label>Password</label>
+        <input type="password" class="form-control" id="recipient-name" #password>
+        <button type="button" class="btn btn-primary" style="margin-top: 20px;" (click)="auth.login(username.value,password.value)"> Connexion</button>
+
+    </div>
+    <div class="col">
+
+    </div>
+</div>
