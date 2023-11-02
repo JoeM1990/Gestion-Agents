@@ -1,5 +1,5 @@
 {
-  "users": [
+  "userst": [
     {
       "id": 1,
       "departement": "Informatique",
@@ -16,7 +16,7 @@
       "service": "ok"
     }
   ],
-  "individus": [
+  "individust": [
     {
       "nom": "Monkila",
       "postnom": "Nkiwa",
@@ -45,7 +45,7 @@
       "photo": null
     }
   ],
-  "casiers": [
+  "casierst": [
     {
       "noms": "Monkila Nkiwa Joe",
       "departement": "Informatique",
