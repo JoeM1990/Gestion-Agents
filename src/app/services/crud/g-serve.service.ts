@@ -12,70 +12,70 @@ export class GServeService {
   constructor( private httpclient: HttpClient) { }
 
   getAllUsers(){
-    return this.httpclient.get<Users[]>('http://localhost:3000/userst');
+    return this.httpclient.get<Users[]>('https://fakeapi-wqoi.onrender.com/userst');
   }
 
   createUsers(users:Users){
-    return this.httpclient.post('http://localhost:3000/userst', users);
+    return this.httpclient.post('https://fakeapi-wqoi.onrender.com/userst', users);
   }
 
   getUserById(id:any){
-    return this.httpclient.get('http://localhost:3000/userst/'+id);
+    return this.httpclient.get('https://fakeapi-wqoi.onrender.com/userst/'+id);
   }
 
 
   updateUser(id:any, users:Users){
-    return this.httpclient.put('http://localhost:3000/userst/'+id, users);
+    return this.httpclient.put('https://fakeapi-wqoi.onrender.com/userst/'+id, users);
   }
 
   deleteUser(id:any){
-    return this.httpclient.delete('http://localhost:3000/userst/'+id);
+    return this.httpclient.delete('https://fakeapi-wqoi.onrender.com/userst/'+id);
   }
 
   getAllIndividus(){
-    return this.httpclient.get<Individus[]>('http://localhost:3000/individust');
+    return this.httpclient.get<Individus[]>('https://fakeapi-wqoi.onrender.com/individust');
   }
 
   createIndividus(individus:Individus){
-    return this.httpclient.post('http://localhost:3000/individust', individus);
+    return this.httpclient.post('https://fakeapi-wqoi.onrender.com/individust', individus);
   }
 
   getIndividusById(id:any){
-    return this.httpclient.get('http://localhost:3000/individust/'+id);
+    return this.httpclient.get('https://fakeapi-wqoi.onrender.com/individust/'+id);
   }
 
 
   updateIndividu(id:any, individus:Individus){
-    return this.httpclient.put('http://localhost:3000/individust/'+id, individus);
+    return this.httpclient.put('https://fakeapi-wqoi.onrender.com/individust/'+id, individus);
   }
 
   deleteIndividu(id:any){
-    return this.httpclient.delete('http://localhost:3000/individust/'+id);
+    return this.httpclient.delete('https://fakeapi-wqoi.onrender.com/individust/'+id);
   }
 
   getAllCasiers(){
-    return this.httpclient.get<Casiers[]>('http://localhost:3000/casierst');
+    return this.httpclient.get<Casiers[]>('https://fakeapi-wqoi.onrender.com/casierst');
   }
 
   createCasiers(casiers:Casiers){
-    return this.httpclient.post('http://localhost:3000/casierst', casiers);
+    return this.httpclient.post('https://fakeapi-wqoi.onrender.com/casierst', casiers);
   }
 
   getCasiersById(id:any){
-    return this.httpclient.get('http://localhost:3000/casierst/'+id);
+    return this.httpclient.get('https://fakeapi-wqoi.onrender.com/casierst/'+id);
   }
 
 
   updateCasiers(id:any, casiers:Casiers){
-    return this.httpclient.put('http://localhost:3000/casierst/'+id, casiers);
+    return this.httpclient.put('https://fakeapi-wqoi.onrender.com/casierst/'+id, casiers);
   }
 
   deleteCasiers(id:any){
-    return this.httpclient.delete('http://localhost:3000/casierst/'+id);
+    return this.httpclient.delete('https://fakeapi-wqoi.onrender.com/casierst/'+id);
   }
 
   chercheCasier(text:any){
-    return this.httpclient.get('http://localhost:3000/casierst?noms_like='+text);
+    return this.httpclient.get('https://fakeapi-wqoi.onrender.com/casierst?noms_like='+text);
   }
   
 }
